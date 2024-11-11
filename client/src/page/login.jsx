@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import InputDefault from '../component/input';
 import RadioDefault from '../component/radio';
-import { apiRegister, apiSignIn, apiCurrent } from '../api/auth';
+import { apiRegister, apiSignIn } from '../api/auth';
 import  UserStore  from '../store/userstore';
 import InputFileDefault from '../component/file';
 import uploadSingleImageToCloudinary from '../utils/upImage';
@@ -24,23 +24,23 @@ function Login() {
       }
 
       const apiCall = isRegistering ? apiRegister : apiSignIn;
-      const response = await apiCall(data);      
-      if (!response.success) {
+      const response = await apiCall(data);  
+                
+      if (response.data.success) {
         UserStore.getState().setToken(response.data.token);
         UserStore.getState().setCurrent(response.data.currentUsers.userId);
         UserStore.getState().setImg(response.data.currentUsers.img);
         UserStore.getState().setRole(response.data.currentUsers.role);
-        UserStore.getState().setName(response.data.currentUsers.name);
+        UserStore.getState().setName(response.data.currentUsers.name);        
         navigate('/'); 
       } else {
-        console.error('Login error:', response);
+        console.error('Login error:', response.data);
       }
     } catch (error) {      
-      notify(error.response.data.message)
-      console.error('Sign-in error:' );
+      //notify(error.response.data.message)
+      console.error('Sign-in error:' ,error);
     } finally {
       setLoading(false);
-      reset(); 
     }
   };
 

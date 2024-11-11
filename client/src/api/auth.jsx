@@ -1,5 +1,5 @@
 
-import instance from '../axios'; // Ensure the import path is correct
+import instance from './axios';
 
 const apiRegister = (data) => instance.post('/api/auth/register', data);
 const apiSignIn = (data) => instance.post('/api/auth/signin', data);
