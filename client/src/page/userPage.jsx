@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { deleteSub, getUser, updateSub } from '../api/auth';
-import Header from './Header';
-import AddUser from './processUser';
+import Header from '../component/Header';
+import AddUser from '../component/User';
 import { notify } from '../utils/toastify';
 
 export default function User() {

@@ -12,7 +12,7 @@ const UserStore = create(persist(
     setName:(name) => set({name}),
     setToken: (token) => set({ token }),
     setImg: (img) => set({ img }),
-    setRole: (role) => set({ role }) // Fixed this line
+    setRole: (role) => set({ role })
   }),
   {
     name: 'dat',

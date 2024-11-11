@@ -135,7 +135,7 @@ const Detail = () => {
           onClick={addsub} 
           className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition duration-200"
         >
-          {success ? "was success" : "add success"}
+          {success ? "was success" : "add"}
         </button>
       </div>
     </div>

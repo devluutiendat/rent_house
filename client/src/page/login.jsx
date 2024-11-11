@@ -21,8 +21,9 @@ function Login() {
       if (isRegistering && file) {
         const uploadedImage = await uploadSingleImageToCloudinary(file);
         data.avatar = uploadedImage;
+        console.log(file);
+        
       }
-
       const apiCall = isRegistering ? apiRegister : apiSignIn;
       const response = await apiCall(data);  
                 
@@ -37,10 +38,11 @@ function Login() {
         console.error('Login error:', response.data);
       }
     } catch (error) {      
-      //notify(error.response.data.message)
+      notify(error.response.data.message)
       console.error('Sign-in error:' ,error);
     } finally {
       setLoading(false);
+      reset()
     }
   };
 

@@ -5,8 +5,8 @@ import Login from "../page/login";
 import Home from "../page/home";
 import Protected from "./protected";
 import Detail from "../page/details";
-import User from "../page/user";
-import Agent from "../page/Agent";
+import User from "../page/userPage";
+import Agent from "../page/agentPage";
 const AuthLayout = () => {
     return <Outlet/>
 }

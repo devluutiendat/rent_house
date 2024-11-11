@@ -1,4 +1,3 @@
-  // component/RadioDefault.jsx
   import React from 'react';
 
   const RadioDefault = ({ label, validate, register, error, option = [] }) => {
