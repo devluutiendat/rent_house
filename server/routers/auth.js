@@ -15,12 +15,13 @@ router.post('/register',
         email:stringReq 
     })), 
     ctrls.register
+    
 );
 
 router.post('/signin',
     validateDto(Joi.object({
         password: stringReq,
-        phone: stringReq, // Assuming phone is required and should be a string
+        phone: stringReq,
     })), 
     ctrls.signIn
 );
